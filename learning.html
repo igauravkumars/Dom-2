@@ -1,0 +1,122 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    
+</body>
+</html>
+<script>
+
+    let x = document.getElementsByTagName("h1")
+
+    for(let i=0;i<x.length;i++){
+        console.log(x[i].innerText)
+
+    }
+  
+</script> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="all">
+        <h1>heading -1</h1>
+        <h1>heading -2</h1>
+        <h1>heading -3</h1>
+        <h1>heading -4</h1>
+    </div>
+    <h1 id="hj">heading -5</h1>
+    <h1 class="head">heading -6</h1>
+    <h1  class="head">heading -7</h1>
+    <h1  class="head">heading -8</h1>
+    <h1  class="head">heading -9</h1>
+
+
+</body>
+</html>
+<script>
+    let heading  =document.querySelectorAll("#all > h1")
+    for(let i=0;i<heading.length;i++){
+    console.log(heading[i].innerText)
+    }
+    let head =document.querySelector("#hj")
+    console.log(head.innerText)
+
+    let claa =document.querySelectorAll(".head")
+    for(let i=0;i<claa.length;i++){
+        console.log(claa[i].innerText)
+    }
+</script> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id ="btn">Play</button>
+</body>
+</html>
+<script>
+    let play = document.getElementById("btn")
+
+    play.addEventListener("click",function(){
+
+        console.log("i am played")
+
+
+    })
+
+</script> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id ="btn"> 
+    <button>0</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    
+</div>
+</body>
+</html>
+<script>
+    let cont =document.querySelectorAll("#btn >button")
+   
+     for(let i=0;i<cont.length;i++){
+        cont[i].addEventListener("click",function(){
+            console.log(cont[i].innerText)
+
+
+        })
+
+   }
+</script>

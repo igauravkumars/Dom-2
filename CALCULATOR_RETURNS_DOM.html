@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #display {
+        text-align: center
+    }
+    #display > input{
+        width: 89%;
+        height: 100px;
+        text-align: center;
+        margin-top: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        font-size: large;
+    }
+    #parent{
+        display: grid;
+        grid-template-columns:repeat(4,1fr);
+        width:90%;
+        height:350px;
+        margin:auto;
+        gap:5px;
+        margin-top:10px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    }
+    #parent > button{
+        border: none;
+    }
+    #outer{
+        width: 30%;
+        height:500px;
+        margin: auto;
+        margin-top:250px;
+        margin-bottom:250px;
+        border: 1px solid black;
+        box-shadow:rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+    }
+    .operator > button{
+        background-color: black;
+        color:white
+        
+    }
+    #clear{
+        background-color:red;
+    }
+    #parent >div > button{
+        width: 100%;
+        height:100%;
+    }
+   
+</style>
+<body>
+  <div id="outer">
+    <div id="display"> 
+        <input type="number" placeholder="caluculator">
+    </div>
+    <div id="parent">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <div class="operator"><button>+</button></div>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <div class="operator"><button>-</button></div>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <div class="operator"><button>x</button></div>
+        <button id ="clear">c</button>
+        <button>0</button>
+        <div id="equal"><button>=</button></div>
+        <div class="operator"><button>/</button></div>
+    </div>
+  </div>
+    
+</body>
+</html>
+<script>
+    let display =document.getElementById("display")
+    let btn =document.querySelectorAll("#parent>button")
+    let operator = document.querySelectorAll("#parent >div>button")
+    
+
+    let isfirstnumber =true
+  let opt=""
+  let Firstnumber =""
+  let SecondNumber =""
+    for(let i=0;i<btn.length;i++){
+    btn[i].addEventListener("click",function(){
+        if(isfirstnumber ==  true){
+            Firstnumber += btn[i].innerText
+            display.innerText =Firstnumber
+        }else{
+            SecondNumber += btn[i].innerText
+            display.innerText =SecondNumber  
+        }
+       
+    })
+
+    for(let i=0;i<operator.length;i++){
+        operator[i].addEventListener("click",function(){
+            isfirstnumber =false
+            opt += operator[i].innerText
+
+        })
+    }
+
+    function cal(Firstnumber,SecondNumber,operator)
+    {
+        switch(opt){
+                case "+": return Number(Firstnumber) + Number(SecondNumber);
+                case "-": return Number(Firstnumber) + Number(SecondNumber)
+                case "*": return Number(Firstnumber) + Number(SecondNumber)
+                case "/": return Number(Firstnumber) + Number(SecondNumber)
+        }
+    }
+    }
+
+</script>
